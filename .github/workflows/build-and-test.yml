@@ -1,0 +1,30 @@
+name: Build site
+
+on: [ push, pull_request ]
+
+jobs:
+  build_and_run_tests:
+    name: Build C# code and run tests
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      MY_OWN_MADE_UP_ENV: 'Lorem Ipsum'
+
+    steps:
+      - name: Dump Environment
+        run:  env | sort
+
+      - name: Get the sources
+        uses: actions/checkout@v2
+
+      - name: Install .NET Core SDK
+        uses: actions/setup-dotnet@v1
+
+      - name: Restore NuGet packages
+        run: dotnet restore
+
+      - name: Build solution
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run tests from solution
+        run: dotnet test --no-restore --no-build
