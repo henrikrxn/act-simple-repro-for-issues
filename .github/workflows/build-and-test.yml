@@ -7,15 +7,15 @@ jobs:
     name: Build C# code and run tests
     runs-on: ubuntu-latest
     env:
-      MY_OWN_STRING: ABC
-      MY_OWN_STRING_WITH_SINGLE_QUOTES: 'ABC'
-      MY_OWN_STRING_WITH_DOUBLE_QUOTES: "ABC"
-      MY_OWN_INT: 1
-      MY_OWN_INT_WITH_SINGLE_QUOTES: '1'
-      MY_OWN_INT_WITH_DOUBLE_QUOTES: "1"
       MY_OWN_BOOL: true
       MY_OWN_BOOL_WITH_SINGLE_QUOTES: 'true'
       MY_OWN_BOOL_WITH_DOUBLE_QUOTES: "true"
+      MY_OWN_INT: 1
+      MY_OWN_INT_WITH_SINGLE_QUOTES: '1'
+      MY_OWN_INT_WITH_DOUBLE_QUOTES: "1"
+      MY_OWN_STRING: ABC
+      MY_OWN_STRING_WITH_SINGLE_QUOTES: 'ABC'
+      MY_OWN_STRING_WITH_DOUBLE_QUOTES: "ABC"
 
     steps:
       - name: Dump relevant parts of Environment
