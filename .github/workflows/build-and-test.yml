@@ -18,8 +18,8 @@ jobs:
       MY_OWN_BOOL_WITH_DOUBLE_QUOTES: "true"
 
     steps:
-      - name: Dump Environment
-        run:  env | sort
+      - name: Dump relevant parts of Environment
+        run:  env | grep MY_OWN | sort
 
       - name: Get the sources
         uses: actions/checkout@v2
