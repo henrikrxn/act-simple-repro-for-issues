@@ -1,6 +1,6 @@
 name: Build site
 
-on: [ push, pull_request ]
+on: [ push, pull_request, workflow_dispatch ]
 
 jobs:
   build_and_run_tests:
@@ -13,6 +13,8 @@ jobs:
       MY_OWN_INT: 1
       MY_OWN_INT_WITH_SINGLE_QUOTES: '1'
       MY_OWN_INT_WITH_DOUBLE_QUOTES: "1"
+      MY_OWN_INT64: 9223372036854775807
+      MY_OWN_INT64_OVERFLOW: 9223372036854775808
       MY_OWN_STRING: ABC
       MY_OWN_STRING_WITH_SINGLE_QUOTES: 'ABC'
       MY_OWN_STRING_WITH_DOUBLE_QUOTES: "ABC"
